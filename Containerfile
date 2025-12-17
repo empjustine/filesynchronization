@@ -1,5 +1,5 @@
 FROM registry.fedoraproject.org/fedora:43
 LABEL org.opencontainers.image.source=https://github.com/empjustine/filesynchronization
-RUN dnf --assumeyes upgrade --minimal --nodocs --noplugins --setopt=install_weak_deps=False \
-    && dnf --assumeyes install syncthing transmission-daemon --nodocs --noplugins --setopt=install_weak_deps=False \
-    && dnf clean all
+RUN dnf --quiet --assumeyes upgrade --minimal --no-docs --no-plugins --setopt=install_weak_deps=False \
+    && dnf --quiet --assumeyes install syncthing transmission-daemon --no-docs --no-plugins --setopt=install_weak_deps=False \
+    && dnf --quiet clean all
